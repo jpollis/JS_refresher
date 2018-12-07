@@ -292,13 +292,48 @@ switch (true) {
 }
 
 
+/*************************************
+* Functions
+*/
+
+function calculateAge(birthYear) {
+	return 2018 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+console.log(ageJohn);
+
+function yearsUntilRetirement(firstName, birthYear) {
+	var age = calculateAge(birthYear);
+	var retirement = 65 - age;
+	if (retirement < 0) {
+		retirement *= -1
+		console.log(firstName + " should have retired " + retirement + " years ago.");
+	} else {
+	console.log(firstName + " retires in " + retirement + " years.");
+	}
+}
+
+yearsUntilRetirement("Joe", 1948);
+
+function yearsUntilRetirement(firstName, birthYear) {
+	var age = calculateAge(birthYear);
+	var retirement = 65 - age;
+	switch (true) {
+		case retirement < 0:
+		  retirement *= -1
+		  console.log(firstName + " should have retired " + retirement + " years ago.");
+		  break;
+		case retirement === 0:
+		  console.log(firstName + " should retire this year");
+		  break;
+		default:
+		  console.log(firstName + " retires in " + retirement + " years.");
+	}
+}
 
 
-
-
-
-
-
+yearsUntilRetirement("Joe", 1938);
 
 
 
