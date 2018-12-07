@@ -303,9 +303,12 @@ function calculateAge(birthYear) {
 var ageJohn = calculateAge(1990);
 console.log(ageJohn);
 
+//modified exercise for retirement calculator
 function yearsUntilRetirement(firstName, birthYear) {
 	var age = calculateAge(birthYear);
 	var retirement = 65 - age;
+	//adding if/else statement to check if retirement var is a negative number.
+	//converting to positive number if negative
 	if (retirement < 0) {
 		retirement *= -1
 		console.log(firstName + " should have retired " + retirement + " years ago.");
@@ -316,6 +319,7 @@ function yearsUntilRetirement(firstName, birthYear) {
 
 yearsUntilRetirement("Joe", 1948);
 
+// switch statement version of modified exercise above
 function yearsUntilRetirement(firstName, birthYear) {
 	var age = calculateAge(birthYear);
 	var retirement = 65 - age;
@@ -333,7 +337,7 @@ function yearsUntilRetirement(firstName, birthYear) {
 }
 
 
-yearsUntilRetirement("Joe", 1938);
+yearsUntilRetirement("Joe", 1985);
 
 
 
