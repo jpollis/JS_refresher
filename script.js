@@ -336,8 +336,110 @@ function yearsUntilRetirement(firstName, birthYear) {
 	}
 }
 
-
 yearsUntilRetirement("Joe", 1985);
+
+
+/******************************************************
+* Function statements and expressions
+*/
+
+// function declaration
+// function name(argument) {}
+
+// function expression
+var whatDoYouDo = function(job, firstName) {
+	switch(job) {
+		case 'teacher':
+		  return firstName + ' teaches kids to code';
+		case 'driver':
+		  return firstName + ' drives people';
+		case 'designer':
+		  return firstName + ' designs websites';
+		default:
+		  return firstName + ' does something else.';
+	}
+}
+
+console.log(whatDoYouDo('teacher', 'Joe'));
+
+
+/*****************************************
+* Arrays
+*/
+
+// initialize new array
+var names = ['John', 'Joe', 'Mike'];
+var years = new Array(1990, 1938, 1989);
+
+console.log(names[0]);
+console.log(names.length);
+console.log(names[2]);
+
+// mutate array data
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// made function to add element to last position of array
+var addName = function(name) {
+	names[names.length] = name;
+	console.log(names);
+}
+
+
+addName('leah');
+addName('greg');
+addName('Matt');
+console.log(names);
+
+// different data types
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+var joe = ['Joe', 'Smith', 1990, 'teacher', false];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990));
+
+// function to check for string and index in array
+var checkJobIndex = function(nameArray, job) {
+	
+var isJob = nameArray.indexOf(job) === -1 ? nameArray[0] + ' is not a ' + job : nameArray[0] + ' is a ' + job 
++ '. The index is: ' + nameArray.indexOf(job) ;
+
+return isJob;
+
+}
+
+console.log(checkJobIndex(joe, 'teacher'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
