@@ -24,9 +24,8 @@ var johnMark = 'John and Mark';
 
 /***********************
 *variable mutation and type coercion
-*/
 
-/*var firstName = "John";
+var firstName = "John";
 var age = 28;
 
 //type coercion
@@ -48,11 +47,11 @@ console.log(firstName + ' is a ' + age + ' year old '
 
  var lastName = prompt("what is his last name?");
  console.log(firstName + ' ' + lastName);
+
 */
 
 /*******************************************
 * Basic operators
-*/
 
 var year, yearJohn, yearMark;
 year = 2018;
@@ -76,10 +75,10 @@ console.log(johnOlder);
 // typeof operator
 console.log(typeof ageJohn);
 
+*/
 
 /**********************************************
 * Operator Precedence
-*/
 
 var now = 2018;
 var yearJohn = 1989;
@@ -109,10 +108,11 @@ console.log(x);
 // x += 1; is the same as...
 x++;
 
+*/
 
 /**********************************************
 * coding challenge
-*/
+
 
 var markMass, markHeight, johnMass, johnHeight;
 markMass = 79;
@@ -126,10 +126,10 @@ var markBmi = markMass / markHeight * markHeight;
 var markHigherBmi = markBmi > johnBmi;
 console.log("Is Mark's BMI higher than John's? " + markHigherBmi);
 
+*/
 
 /**************************************************
 * If/else statements
-*/
 
 var firstName = 'John';
 var civilStatus = 'single';
@@ -161,10 +161,11 @@ if (markBmi > johnBmi) {
 // var markHigherBmi = markBmi > johnBmi;
 // console.log("Is Mark's BMI higher than John's? " + markHigherBmi);
 
+*/
 
 /**************************************
 * Boolean logic
-*/
+
 
 /*
 var firstName = 'John';
@@ -179,11 +180,12 @@ if (age < 13) {
 } else {
 	console.log(firstName + ' is a man');
 }
+
 */
 
 /******************************
 * The Ternary Operator and Switch Statements
-*/
+
 
 // Ternary operator
 var firstName = 'John';
@@ -213,7 +215,7 @@ switch (job) {
 	  console.log(firstName + ' does something else.');
 }
 
-/*
+
 var firstName = 'John';
 var age = 23;
 
@@ -226,7 +228,7 @@ if (age < 13) {
 } else {
 	console.log(firstName + ' is a man');
 }
-*/
+
 
 var firstName = 'John';
 var age = 31;
@@ -245,11 +247,11 @@ switch (true) {
 	  console.log(firstName + ' is a man.');
 }
 
-
+*/
 
 /*****************************************
 * Truthy and Falsy values and equality operators
-*/
+
 
 // falsy values: undefined, null, 0, '', NaN 
 // truthy values: all values that are not falsy
@@ -291,10 +293,11 @@ switch (true) {
 	  console.log("John, Mary, and Mike's team scored on average the same amount of points");
 }
 
+*/
 
 /*************************************
 * Functions
-*/
+
 
 function calculateAge(birthYear) {
 	return 2018 - birthYear;
@@ -338,10 +341,11 @@ function yearsUntilRetirement(firstName, birthYear) {
 
 yearsUntilRetirement("Joe", 1985);
 
+*/
 
 /******************************************************
 * Function statements and expressions
-*/
+
 
 // function declaration
 // function name(argument) {}
@@ -362,10 +366,11 @@ var whatDoYouDo = function(job, firstName) {
 
 console.log(whatDoYouDo('teacher', 'Joe'));
 
+*/
 
 /*****************************************
 * Arrays
-*/
+
 
 // initialize new array
 var names = ['John', 'Joe', 'Mike'];
@@ -420,11 +425,13 @@ return isJob;
 
 console.log(checkJobIndex(joe, 'teacher'));
 
+*/
 
 /*********************************************
 * Objects and Properties
-*/
 
+
+// Object literal
 var john = {
 	firstName: "John",
 	lastName: "Smith",
@@ -443,25 +450,67 @@ john.job = 'designer';
 john['isMarried'] = true;
 console.log(john);
 
+// new Object syntax
 var jane = new Object();
 jane.name = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
 console.log(jane);
 
+*/
 
+/****************************
+* Objects and Methods
+*/
 
+// my way using current year as the argument
+var john = {
+	firstName: "John",
+	lastName: "Smith",
+	birthYear: 1990,
+	family: ['Jane', 'Mark', 'Bob', 'Emily'],
+	job: 'teacher',
+	isMarried: false,
+	calcAge: function(currentYear) {
+		this.age = currentYear - this.birthYear;
+	}
+};
 
+john.calcAge(2018);
+console.log(john);
 
+// using 'this' keyword (doing it the course's way with 2018 in the function)
+var john = {
+	firstName: "John",
+	lastName: "Smith",
+	birthYear: 1990,
+	family: ['Jane', 'Mark', 'Bob', 'Emily'],
+	job: 'teacher',
+	isMarried: false,
+	calcAge: function() {
+		return 2018 - this.birthYear;
+	}
+};
 
+john.age = john.calcAge();
 
+console.log(john.age);
 
+// setting the key in the function
+var john = {
+	firstName: "John",
+	lastName: "Smith",
+	birthYear: 1990,
+	family: ['Jane', 'Mark', 'Bob', 'Emily'],
+	job: 'teacher',
+	isMarried: false,
+	calcAge: function() {
+		this.age = 2018 - this.birthYear;
+	}
+};
 
-
-
-
-
-
+john.calcAge();
+console.log(john);
 
 
 
